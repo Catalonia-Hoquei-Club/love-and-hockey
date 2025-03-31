@@ -11,8 +11,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f0d5b7] to-[#58a8aa] text-[#000000] flex flex-col">
-      {/* Cabecera */}
-      <header className="p-8 flex justify-center">
+      {/* Cabecera - Logo */}
+      <motion.header
+        className="p-8 flex justify-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="w-40 h-40 relative">
           <Image
             src="/logo.svg"
@@ -21,12 +26,16 @@ export default function Home() {
             className="object-contain"
           />
         </div>
-      </header>
+      </motion.header>
 
       {/* Contenido Principal */}
       <main className="p-8 space-y-16 mx-auto flex-grow">
         {/* Sección de Equipos */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+        >
           <h1 className="text-center text-3xl mb-8">Equipos</h1>
           <div className="grid grid-cols-4 gap-6">
             {teamsData.map((team, index) => (
@@ -47,10 +56,14 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Sección de Invitados Especiales */}
-        <section>
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+        >
           <h1 className="text-center text-3xl mb-8">Invitados Especiales</h1>
           <div className="grid grid-cols-4 gap-6">
             {iconsData.map((icon, index) => (
@@ -70,7 +83,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </section>
+        </motion.section>
       </main>
 
       {/* Footer */}
