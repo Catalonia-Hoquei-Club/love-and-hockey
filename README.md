@@ -25,7 +25,7 @@ You can visit the site at:
 
 ### Requirements
 
-- Node.js (v14 or later)
+- Node.js (v18 or later)
 - npm or yarn
 
 ### Installation
