@@ -35,22 +35,25 @@ You can visit the site at:
    ```bash
    git clone https://github.com/yourusername/love-and-hockey.git
    cd love-and-hockey
+   ```
+2.	Install dependencies:
 
-	2.	Install dependencies:
-
+```bash
 npm install
 # or
 yarn install
-
+```
 
 
 Running in Development
 
 Start the development server with:
 
+```bash
 npm run dev
 # or
 yarn dev
+```
 
 The application will be available at http://localhost:3000.
 
@@ -58,40 +61,32 @@ Building and Running in Production
 
 To build the project:
 
+```bash
 npm run build
 # or
 yarn build
+```
 
 Then start the production server:
 
+```bash
 npm start
 # or
 yarn start
+```
 
-SEO & Open Graph Configuration
-
-Open Graph and other meta tags are set up in the src/pages/_document.tsx file. Customize the values for og:title, og:description, og:image, and og:url to fit your needs.
-
-404 Redirection
-
-A custom 404 page (src/pages/404.tsx) automatically redirects unknown routes to the home page.
-
-Contributing
+### Contributing
 
 Contributions are welcome! Please fork the repository and submit your pull requests with any improvements or fixes.
 
-License
+### License
 
 This project is licensed under the MIT License.
 
-Contact
+### Contact
 
 For any questions or suggestions, feel free to reach out via email at your-email@example.com.
 
 ⸻
 
 Enjoy building with Love & Hockey!
-
----
-
-This README provides an overview of the project, its features, installation instructions, and other relevant information, without exposing any sensitive deployment details.
