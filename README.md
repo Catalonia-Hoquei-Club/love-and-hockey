@@ -21,36 +21,6 @@ You can visit the site at:
 - [Framer Motion](https://www.framer.com/motion/) – A powerful animation library for React.
 - [Heroicons](https://heroicons.com/) – (Optional) Icon set for UI elements such as the modal close button.
 
-## Project Structure
-
-love-and-hockey/
-├── README.md
-├── package.json
-├── next.config.ts
-├── postcss.config.mjs
-├── tailwind.config.js
-├── public
-│   ├── default_image.png
-│   ├── favicon.ico
-│   └── logo.svg
-├── src
-│   ├── components
-│   │   └── Modal.tsx
-│   ├── data
-│   │   ├── icons.data.ts
-│   │   └── teams.data.ts
-│   ├── pages
-│   │   ├── _app.tsx
-│   │   ├── _document.tsx
-│   │   ├── 404.tsx
-│   │   └── index.tsx
-│   ├── styles
-│   │   └── globals.css
-│   └── types
-│       ├── icon.interface.ts
-│       └── team.interface.ts
-└── tsconfig.json
-
 ## Installation and Usage
 
 ### Requirements
