@@ -32,10 +32,10 @@ You can visit the site at:
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/yourusername/love-and-hockey.git
-   cd love-and-hockey
-   ```
+```bash
+git clone https://github.com/yourusername/love-and-hockey.git
+cd love-and-hockey
+```
 2.	Install dependencies:
 
 ```bash
