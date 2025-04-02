@@ -1,40 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Love & Hockey
 
-## Getting Started
+Love & Hockey is a web application for an event/tournament that showcases teams and special guests in an interactive and engaging way. The site is built using Next.js, Tailwind CSS, and Framer Motion to provide a modern, mobile-friendly experience.
 
-First, run the development server:
+You can visit the site at:  
+[https://love-and-hockey.cataloniahc.com/](https://love-and-hockey.cataloniahc.com/)
 
-```bash
+## Features
+
+- **Responsive Design:** Adapts to mobile devices, displaying 4 circular elements per row.
+- **Animations:** Utilizes Framer Motion for entry animations and interactive hover effects on team and guest icons.
+- **Dynamic Modals:** Clicking on any circle opens a modal with detailed information, which conditionally shows content based on whether the team/guest details have been revealed.
+- **Optimized Images:** Uses Next.js's `Image` component for improved performance.
+- **SEO & Open Graph:** Meta tags for Open Graph (og:title, og:image, etc.) are configured to enhance SEO and social media sharing.
+- **404 Redirection:** Unknown routes redirect automatically to the home page.
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/) – A React framework for server-side rendering and static site generation.
+- [Tailwind CSS](https://tailwindcss.com/) – A utility-first CSS framework for rapid UI development.
+- [Framer Motion](https://www.framer.com/motion/) – A powerful animation library for React.
+- [Heroicons](https://heroicons.com/) – (Optional) Icon set for UI elements such as the modal close button.
+
+## Project Structure
+
+love-and-hockey/
+├── README.md
+├── package.json
+├── next.config.ts
+├── postcss.config.mjs
+├── tailwind.config.js
+├── public
+│   ├── default_image.png
+│   ├── favicon.ico
+│   └── logo.svg
+├── src
+│   ├── components
+│   │   └── Modal.tsx
+│   ├── data
+│   │   ├── icons.data.ts
+│   │   └── teams.data.ts
+│   ├── pages
+│   │   ├── _app.tsx
+│   │   ├── _document.tsx
+│   │   ├── 404.tsx
+│   │   └── index.tsx
+│   ├── styles
+│   │   └── globals.css
+│   └── types
+│       ├── icon.interface.ts
+│       └── team.interface.ts
+└── tsconfig.json
+
+## Installation and Usage
+
+### Requirements
+
+- Node.js (v14 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/love-and-hockey.git
+   cd love-and-hockey
+
+	2.	Install dependencies:
+
+npm install
+# or
+yarn install
+
+
+
+Running in Development
+
+Start the development server with:
+
 npm run dev
 # or
 yarn dev
+
+The application will be available at http://localhost:3000.
+
+Building and Running in Production
+
+To build the project:
+
+npm run build
 # or
-pnpm dev
+yarn build
+
+Then start the production server:
+
+npm start
 # or
-bun dev
-```
+yarn start
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+SEO & Open Graph Configuration
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Open Graph and other meta tags are set up in the src/pages/_document.tsx file. Customize the values for og:title, og:description, og:image, and og:url to fit your needs.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+404 Redirection
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+A custom 404 page (src/pages/404.tsx) automatically redirects unknown routes to the home page.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Contributing
 
-## Learn More
+Contributions are welcome! Please fork the repository and submit your pull requests with any improvements or fixes.
 
-To learn more about Next.js, take a look at the following resources:
+License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+This project is licensed under the MIT License.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contact
 
-## Deploy on Vercel
+For any questions or suggestions, feel free to reach out via email at your-email@example.com.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+⸻
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Enjoy building with Love & Hockey!
+
+---
+
+This README provides an overview of the project, its features, installation instructions, and other relevant information, without exposing any sensitive deployment details.
