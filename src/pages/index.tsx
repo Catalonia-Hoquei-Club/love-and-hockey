@@ -59,48 +59,46 @@ export default function Home() {
             ))}
           </div>
         </motion.section>
-        {/* Calendario & Organigrama */}
+        {/* Calendario */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.6 }}
         >
-          <h1 className="text-center text-3xl mb-8">
-            Calendario
-          </h1>
+          <h1 className="text-center text-3xl mb-8">Calendario</h1>
 
           {/* ――― Time-line ――― */}
-          <div className="relative max-w-2xl mx-auto px-6">
-            {/* Línea vertical */}
-            <span className="absolute left-6 top-0 bottom-0 w-px bg-neutral-400/50 pointer-events-none hidden md:block" />
+          <div className="relative max-w-2xl mx-auto px-4 sm:px-6">
+            {/* Línea vertical SOLO en ≥ md */}
+            <span className="hidden md:block absolute left-5 top-0 bottom-0 w-px bg-neutral-400/50 pointer-events-none" />
 
-            <ul className="space-y-8 md:pl-14">
+            <ul className="space-y-8 sm:space-y-10 pl-0 md:pl-14">
               {scheduleData.map((item, index) => (
                 <motion.li
                   key={index}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.97 }}
                   onClick={() => setSelectedSchedule(index)}
-                  className="flex gap-6 items-start cursor-pointer group focus:outline-none"
+                  className="flex gap-4 sm:gap-6 items-start cursor-pointer group focus:outline-none"
                   role="button"
                   tabIndex={0}
                 >
-                  {/* Punto + animación “ping” */}
-                  <span className="relative flex h-4 w-4 mt-0.5">
+                  {/* Punto + ping */}
+                  <span className="relative flex h-4 w-4 mt-0.5 flex-none">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#000]/60 opacity-60 group-hover:opacity-0" />
                     <span className="relative inline-flex h-4 w-4 rounded-full bg-[#000]" />
                   </span>
 
-                  {/* Hora */}
-                  <time className="w-20 text-right font-semibold">
+                  {/* Hora  */}
+                  <time className="text-right font-semibold flex-none w-14 sm:w-20">
                     {item.time}
                   </time>
 
                   {/* Contenido */}
-                  <div>
+                  <div className="min-w-0">
                     <h3 className="font-bold leading-tight">{item.title}</h3>
                     {item.subtitle && (
-                      <p className="text-sm text-neutral-700 leading-snug">
+                      <p className="text-sm text-neutral-700 leading-snug break-words">
                         {item.subtitle}
                       </p>
                     )}
