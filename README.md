@@ -1,40 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Love & Hockey
 
-## Getting Started
+Love & Hockey is a web application for an event/tournament that showcases teams and special guests in an interactive and engaging way. The site is built using Next.js, Tailwind CSS, and Framer Motion to provide a modern, mobile-friendly experience.
 
-First, run the development server:
+You can visit the site at:  
+[https://love-and-hockey.cataloniahc.com/](https://love-and-hockey.cataloniahc.com/)
+
+## Features
+
+- **Responsive Design:** Adapts to mobile devices, displaying 4 circular elements per row.
+- **Animations:** Utilizes Framer Motion for entry animations and interactive hover effects on team and guest icons.
+- **Dynamic Modals:** Clicking on any circle opens a modal with detailed information, which conditionally shows content based on whether the team/guest details have been revealed.
+- **Optimized Images:** Uses Next.js's `Image` component for improved performance.
+- **SEO & Open Graph:** Meta tags for Open Graph (og:title, og:image, etc.) are configured to enhance SEO and social media sharing.
+- **404 Redirection:** Unknown routes redirect automatically to the home page.
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/) – A React framework for server-side rendering and static site generation.
+- [Tailwind CSS](https://tailwindcss.com/) – A utility-first CSS framework for rapid UI development.
+- [Framer Motion](https://www.framer.com/motion/) – A powerful animation library for React.
+- [Heroicons](https://heroicons.com/) – (Optional) Icon set for UI elements such as the modal close button.
+
+## Installation and Usage
+
+### Requirements
+
+- Node.js (v18 or later)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/love-and-hockey.git
+cd love-and-hockey
+```
+2.	Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+
+Running in Development
+
+Start the development server with:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at http://localhost:3000.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Building and Running in Production
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+To build the project:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```bash
+npm run build
+# or
+yarn build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Then start the production server:
 
-## Learn More
+```bash
+npm start
+# or
+yarn start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Contributions are welcome! Please fork the repository and submit your pull requests with any improvements or fixes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### License
 
-## Deploy on Vercel
+This project is licensed under the MIT License.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+For any questions or suggestions, feel free to reach out via email at your-email@example.com.
+
+⸻
+
+Enjoy building with Love & Hockey!
