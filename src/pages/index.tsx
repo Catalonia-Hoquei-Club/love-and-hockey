@@ -36,7 +36,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <h1 className="text-center text-3xl mb-8">Equipos</h1>
+          <h1 className="text-center text-3xl mb-8">Equips i Capitans</h1>
           <div className="grid grid-cols-4 gap-6">
             {teamsData.map((team, index) => (
               <motion.div
@@ -50,33 +50,6 @@ export default function Home() {
                 <Image
                   src={team.src || "/default_image.png"}
                   alt={`Equipo ${index + 1}`}
-                  fill
-                  className="rounded-full object-cover"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Sección de Invitados Especiales */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-        >
-          <h1 className="text-center text-3xl mb-8">Invitados Especiales</h1>
-          <div className="grid grid-cols-4 gap-6">
-            {iconsData.map((icon, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setSelectedIcon(index)}
-                className="w-20 h-20 md:w-30 md:h-30 relative cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-200 rounded-full overflow-hidden"
-              >
-                <Image
-                  src={icon.src || "/default_image.png"}
-                  alt={icon.alt || `Invitado Especial ${index + 1}`}
                   fill
                   className="rounded-full object-cover"
                 />

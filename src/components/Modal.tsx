@@ -11,6 +11,10 @@ const backdropVariants = {
   visible: { opacity: 1 },
   hidden: { opacity: 0 },
 };
+const backdropVariantsTwo = {
+  visible: { opacity: 0.8 },
+  hidden: { opacity: 0 },
+};
 
 const modalVariants = {
   hidden: { scale: 0.8, opacity: 0 },
@@ -20,7 +24,7 @@ const modalVariants = {
 export default function Modal({ onClose, children }: ModalProps) {
   return (
     <motion.div
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-opacity-50 flex items-center justify-center p-4"
       variants={backdropVariants}
       initial="hidden"
       animate="visible"
@@ -28,7 +32,15 @@ export default function Modal({ onClose, children }: ModalProps) {
       onClick={onClose}
     >
       <motion.div
-        className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full relative"
+        className="fixed inset-0 bg-black"
+        variants={backdropVariantsTwo}
+        initial="hidden"
+        animate="visible"
+        exit="hidden"
+        onClick={onClose}
+      />
+      <motion.div
+        className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full relative "
         variants={modalVariants}
         initial="hidden"
         animate="visible"
