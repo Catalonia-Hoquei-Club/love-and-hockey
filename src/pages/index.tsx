@@ -4,10 +4,12 @@ import Modal from "@/components/Modal";
 import Image from "next/image";
 import { iconsData } from "@/data/icons.data";
 import { teamsData } from "@/data/teams.data";
+import { scheduleData } from "@/data/schedule.data";
 
 export default function Home() {
   const [selectedTeam, setSelectedTeam] = useState<number | null>(null);
   const [selectedIcon, setSelectedIcon] = useState<number | null>(null);
+  const [selectedSchedule, setSelectedSchedule] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#f0d5b7] to-[#58a8aa] text-[#000000] flex flex-col">
@@ -36,15 +38,15 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <h1 className="text-center text-3xl mb-8">Equips i Capitans</h1>
-          <div className="grid grid-cols-4 gap-6">
+          <h1 className="text-center text-3xl mb-8">Equipos y Capitanes</h1>
+          <div className="grid grid-cols-4 md:gap-6 gap-4 justify-items-center">
             {teamsData.map((team, index) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setSelectedTeam(index)}
-                className="w-20 h-20 md:w-30 md:h-30 relative cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-200 rounded-full overflow-hidden"
+                className="w-17 h-17 md:w-30 md:h-30 relative cursor-pointer shadow-md hover:shadow-lg transition-shadow duration-200 rounded-full overflow-hidden"
                 style={{ backgroundColor: team.team_color }}
               >
                 <Image
@@ -55,6 +57,57 @@ export default function Home() {
                 />
               </motion.div>
             ))}
+          </div>
+        </motion.section>
+        {/* Calendario & Organigrama */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.6 }}
+        >
+          <h1 className="text-center text-3xl mb-8">
+            Calendario
+          </h1>
+
+          {/* ――― Time-line ――― */}
+          <div className="relative max-w-2xl mx-auto px-6">
+            {/* Línea vertical */}
+            <span className="absolute left-6 top-0 bottom-0 w-px bg-neutral-400/50 pointer-events-none hidden md:block" />
+
+            <ul className="space-y-8 md:pl-14">
+              {scheduleData.map((item, index) => (
+                <motion.li
+                  key={index}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => setSelectedSchedule(index)}
+                  className="flex gap-6 items-start cursor-pointer group focus:outline-none"
+                  role="button"
+                  tabIndex={0}
+                >
+                  {/* Punto + animación “ping” */}
+                  <span className="relative flex h-4 w-4 mt-0.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#000]/60 opacity-60 group-hover:opacity-0" />
+                    <span className="relative inline-flex h-4 w-4 rounded-full bg-[#000]" />
+                  </span>
+
+                  {/* Hora */}
+                  <time className="w-20 text-right font-semibold">
+                    {item.time}
+                  </time>
+
+                  {/* Contenido */}
+                  <div>
+                    <h3 className="font-bold leading-tight">{item.title}</h3>
+                    {item.subtitle && (
+                      <p className="text-sm text-neutral-700 leading-snug">
+                        {item.subtitle}
+                      </p>
+                    )}
+                  </div>
+                </motion.li>
+              ))}
+            </ul>
           </div>
         </motion.section>
       </main>
@@ -73,6 +126,21 @@ export default function Home() {
           </a>
         </p>
       </footer>
+      <AnimatePresence>
+        {selectedSchedule !== null && (
+          <Modal onClose={() => setSelectedSchedule(null)}>
+            <div className="space-y-4">
+              <h2 className="text-2xl mb-2">{scheduleData[selectedSchedule].title}</h2>
+              <p className="text-sm text-gray-600">{scheduleData[selectedSchedule].time}</p>
+              {scheduleData[selectedSchedule].description ? (
+                <p>{scheduleData[selectedSchedule].description}</p>
+              ) : (
+                <p>Pronto publicaremos los detalles de esta actividad.</p>
+              )}
+            </div>
+          </Modal>
+        )}
+      </AnimatePresence>
 
       {/* Modal para Equipos */}
       <AnimatePresence>
