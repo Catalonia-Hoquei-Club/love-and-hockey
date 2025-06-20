@@ -5,6 +5,7 @@ import Image from "next/image";
 import { iconsData } from "@/data/icons.data";
 import { teamsData } from "@/data/teams.data";
 import { scheduleData } from "@/data/schedule.data";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
   const [selectedTeam, setSelectedTeam] = useState<number | null>(null);
@@ -59,6 +60,7 @@ export default function Home() {
             ))}
           </div>
         </motion.section>
+
         {/* Calendario */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
@@ -108,6 +110,40 @@ export default function Home() {
             </ul>
           </div>
         </motion.section>
+        <motion.a
+          href="https://www.traipsapp.com/en/c/6852b7652ed0cfd16b5b29ca"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="block max-w-xl mx-auto my-12"
+        >
+          <div className="flex items-center justify-between gap-4 bg-white/80 backdrop-blur rounded-2xl shadow-lg p-6 sm:p-8 ring-1 ring-neutral-200 hover:shadow-xl hover:scale-[1.02] transition-all">
+            {/* Logo Traips (coloca /public/logos/traips.svg) */}
+            <Image
+              src="/ms-icon-310x310.png"
+              alt="Traips logo"
+              width={56}
+              height={56}
+              className="flex-none object-contain hidden sm:block"
+            />
+
+            {/* Texto */}
+            <div className="flex-grow">
+              <h2 className="text-lg sm:text-xl font-bold">
+                Sigue partidos y clasificación en Traips
+              </h2>
+              <p className="text-sm text-neutral-700 leading-snug">
+                Resultados en directo, tablas actualizadas y más detalles del
+                Love&nbsp;&amp;&nbsp;Hockey&nbsp;2025.
+              </p>
+            </div>
+
+            <ChevronRightIcon className="w-6 h-6 flex-none text-neutral-500 group-hover:text-neutral-800" />
+          </div>
+        </motion.a>
+
       </main>
 
       {/* Footer */}
@@ -147,7 +183,7 @@ export default function Home() {
             <div className="space-y-4">
               <h2 className="text-2xl mb-4">
                 {teamsData[selectedTeam].capitan
-                  ? `Equipo de ${teamsData[selectedTeam].capitan}`
+                  ? `Amigos de ${teamsData[selectedTeam].capitan}`
                   : `Equipo ${selectedTeam + 1} (Por revelar)`}
               </h2>
               {teamsData[selectedTeam].capitan ? (
@@ -167,6 +203,16 @@ export default function Home() {
                   Revelado el: {teamsData[selectedTeam].revelationDate}
                 </p>
               )}
+              <div className="flex items-center gap-4 mt-4">
+                <a
+                  href={teamsData[selectedTeam].traips}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline"
+                >
+                  Ver Equipo en Traips
+                </a>
+              </div>
             </div>
           </Modal>
         )}

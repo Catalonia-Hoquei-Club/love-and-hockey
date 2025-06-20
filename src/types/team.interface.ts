@@ -4,4 +4,5 @@ export interface TeamInterface {
     revelationDate: string;
     team_color: string;
     src?: string;
+    traips: string;
 }
